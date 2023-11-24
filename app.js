@@ -119,7 +119,7 @@ function draw() {
     dy = -dy;
     originY = dy;
   }
-  else if (y + dy > canvas.height - ballRadius) {
+  else if (y + dy > canvas.height - paddleHeight) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
       originY = dy;
