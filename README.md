@@ -13,7 +13,7 @@ git, github, codeShare
 
 ### 시작화면
 
-<img src="시작.png">
+<img src="시작화면.png">
 
 ### 진행화면
 
