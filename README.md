@@ -11,6 +11,14 @@ git, github, codeShare
 
 ## 2-3. 기능 시연(실제로 시연 or gif 이미지 등)
 
+### 시작화면
+
+<img src="시작.png">
+
+### 진행화면
+
+<img src="진행중.png">
+
 ## 2-4. 핵심 기능 설명 및 구현 방법
 
 ### 1. canvas 태그
