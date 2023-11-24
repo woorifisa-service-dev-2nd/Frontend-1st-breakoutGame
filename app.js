@@ -32,10 +32,10 @@ for (let c = 0; c < brickColumnCount; c++) {
 }
 
 document.querySelector("button").addEventListener("click", () => {
-  draw();
-  document.querySelector(".continer").style.display = "none";
-  canvas.style.backgroundColor = "#eee";
-});
+  draw()
+  document.querySelector(".continer").style.display = "none"
+  canvas.style.backgroundColor = "#eee"
+})
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -44,9 +44,11 @@ document.addEventListener("mousemove", mouseMoveHandler, false);
 function keyDownHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
     rightPressed = true;
-  } else if (e.key == "Left" || e.key == "ArrowLeft") {
+  }
+  else if (e.key == "Left" || e.key == "ArrowLeft") {
     leftPressed = true;
-  } else if (e.keyCode == 32) {
+  }
+  else if (e.keyCode == 32) {
     spaceHandler();
   }
 }
@@ -54,7 +56,8 @@ function keyDownHandler(e) {
 function keyUpHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
     rightPressed = false;
-  } else if (e.key == "Left" || e.key == "ArrowLeft") {
+  }
+  else if (e.key == "Left" || e.key == "ArrowLeft") {
     leftPressed = false;
   }
 }
@@ -88,7 +91,8 @@ function spaceHandler(e) {
   if (spacePressed == true) {
     dx = originX;
     dy = originY;
-  } else {
+  }
+  else {
     dx = 0;
     dy = 0;
   }
@@ -113,8 +117,8 @@ function drawBricks() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
       if (bricks[c][r].status == 1) {
-        let brickX = r * (brickWidth + brickPadding) + brickOffsetLeft;
-        let brickY = c * (brickHeight + brickPadding) + brickOffsetTop;
+        let brickX = (r * (brickWidth + brickPadding)) + brickOffsetLeft;
+        let brickY = (c * (brickHeight + brickPadding)) + brickOffsetTop;
         bricks[c][r].x = brickX;
         bricks[c][r].y = brickY;
         ctx.beginPath();
@@ -153,11 +157,13 @@ function draw() {
   if (y + dy < ballRadius) {
     dy = -dy;
     originY = dy;
-  } else if (y + dy > canvas.height - ballRadius) {
+  }
+  else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
       originY = dy;
-    } else {
+    }
+    else {
       //   lives--;
       //   if(!lives) {
       x = canvas.width / 2;
@@ -177,7 +183,8 @@ function draw() {
 
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
     paddleX += 7;
-  } else if (leftPressed && paddleX > 0) {
+  }
+  else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
   }
 
@@ -185,3 +192,5 @@ function draw() {
   y += dy;
   requestAnimationFrame(draw);
 }
+
+// draw();
