@@ -31,6 +31,12 @@ for(let c=0; c<brickColumnCount; c++) {
   }
 }
 
+document.querySelector("button").addEventListener("click", () => {
+    draw()
+    document.querySelector(".continer").style.display = "none"
+    canvas.style.backgroundColor = "#eee"
+})
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
