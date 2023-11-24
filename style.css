@@ -27,10 +27,10 @@ canvas {
 }
 
 .dsc {
-  font-size: 18px;
-  margin-top: 40px;
-  margin-bottom: 10px;
   background-color: #eee;
+  font-size: 18px;
+  margin-top: 35px;
+  margin-bottom: 10px;
 }
 
 img {
@@ -39,9 +39,14 @@ img {
 }
 
 button {
-  width: 100px;
+  width: 80px;
   height: 30px;
-  background-color: bisque;
+  background-color: antiquewhite;
   border-radius: 10px;
-  border: none;
+  border: 1px solid black;
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
