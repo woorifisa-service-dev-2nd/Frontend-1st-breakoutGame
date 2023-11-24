@@ -5,7 +5,7 @@ let x = canvas.width / 2;
 let y = canvas.height - 30;
 let dx = 2; //속도제어
 let dy = -2;
-var originY = dy;
+var originY = dy; //원래 속도값 저장
 var originX = dx;
 let paddleHeight = 10;
 let paddleWidth = 75;
@@ -21,7 +21,6 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 let score = 0;
-// let lives = 3;
 
 let bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
@@ -39,7 +38,7 @@ document.querySelector("button").addEventListener("click", () => {
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
-//document.addEventListener("mousemove", mouseMoveHandler, false);
+
 
 function keyDownHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
@@ -105,19 +104,12 @@ function drawBricks() {
     }
   }
 }
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, 8, 20);
-}
-
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
   drawBall();
   drawPaddle();
-  drawScore();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
@@ -143,7 +135,7 @@ function draw() {
   }
 
 
-  if (!spacePressed) {
+  if (!spacePressed) {  //spaceBar의 참일때 화살표키를 사용할 수 있게 해줌
     if (rightPressed && paddleX < canvas.width - paddleWidth) {
       paddleX += 7;
     }
